@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Home Events</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>Smart Lock Event Logs</h2>
+
+<div class="filter-container">
+    <select id="filterType">
+        <option value="all">Show All</option>
+        <option value="Access Granted">Access Granted</option>
+        <option value="Access Denied">Access Denied</option>
+        <option value="FIRE EMERGENCY">Fire Emergency</option>
+        <option value="Safe">Safe</option>
+    </select>
+    <button onclick="downloadCSV()">Export CSV</button>
+</div>
+
+<table id="eventTable">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Event Type</th>
+            <th>Temperature (°C)</th>
+            <th>Timestamp</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in logs %}
+        <tr>
+            <td>{{ log.id }}</td>
+            <td>{{ log.event_type }}</td>
+            <td>{{ log.temperature if log.temperature != None else '—' }}</td>
+            <td>{{ log.timestamp }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<canvas id="tempChart" height="100"></canvas>
+
+<script>
+    const tempData = {
+      labels: {{ labels | tojson }},
+      temps: {{ temps | tojson }}
+    };
+  </script>
+  
+  
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

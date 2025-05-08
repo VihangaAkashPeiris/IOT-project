@@ -1,0 +1,60 @@
+body, .main-content, .card, .table, .navbar, .container-fluid, .card-body {
+  background-color: #2A2E45 !important;
+  color: #9b1b1b !important;
+}
+
+.card {
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navbar, .sidenav {
+  background-color: #1f2233 !important;
+}
+
+.table thead th {
+  color: #ffffff !important;
+  background-color: #1f2233 !important;
+  border-color: #3c4059 !important;
+}
+.table td {
+    color: #ffffff !important;
+    border-color: #3c4059 !important;
+  }
+  
+
+
+.card {
+    background-color: #2A2E45 !important;
+    border: none !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+    margin-bottom: 1.5rem !important;
+    padding: 1rem;
+  }
+  
+  
+  .card-header {
+    background-color: #2A2E45 !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #3c4059 !important;
+    border-radius: 0 !important;
+  }
+  
+  .card-body {
+    background-color: #2A2E45 !important;
+    border-radius: 0 !important;
+  }
+  
+
+.text-dark {
+  color: #ffffff !important;
+}
+
+h5, h6, p {
+  color: #ffffff !important;
+}
+
+canvas {
+  background-color: #2A2E45 !important;
+}
