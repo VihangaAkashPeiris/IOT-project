@@ -152,8 +152,11 @@
             <div class="card-body p-3">
               <div class="table-responsive">
                 
-                <div class="d-flex justify-content-end mb-3">
-                  <select id="eventFilter" class="form-select w-auto">
+                <div class="d-flex justify-content-end align-items-center gap-3 mb-3">
+                  <button class="btn btn-primary d-flex align-items-center px-3 py-2" id="exportBtn">
+                    📤 Export CSV
+                  </button>
+                  <select id="eventFilter" class="form-select py-2 px-3" style="height: 40px; max-width: 200px;">
                     <option value="">All Events</option>
                     <option value="Access Granted">Access Granted</option>
                     <option value="Access Denied">Access Denied</option>
@@ -161,6 +164,10 @@
                     <option value="Safe">Safe</option>
                   </select>
                 </div>
+                
+               
+                
+                
                 
                 <table class="table align-items-center mb-0" id="eventTable">
                   <thead>
@@ -257,5 +264,31 @@
       });
     });
   </script>
+  <script>
+    document.getElementById("exportBtn").addEventListener("click", function () {
+      const table = document.getElementById("eventTable");
+      const rows = table.querySelectorAll("tbody tr");
+      let csv = "ID,Event,Temp (°C),Timestamp\n";
+  
+      rows.forEach(row => {
+        if (row.style.display !== "none") {
+          const cols = row.querySelectorAll("td");
+          const rowData = Array.from(cols).map(col => `"${col.innerText}"`).join(",");
+          csv += rowData + "\n";
+        }
+      });
+  
+      // Trigger download
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const link = document.createElement("a");
+      link.setAttribute("href", URL.createObjectURL(blob));
+      link.setAttribute("download", "event_logs.csv");
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
+  
 </body>
 </html>

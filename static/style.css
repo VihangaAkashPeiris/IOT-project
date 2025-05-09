@@ -58,3 +58,36 @@ h5, h6, p {
 canvas {
   background-color: #2A2E45 !important;
 }
+/* Button Style */
+#exportBtn {
+  background-color: #5e72e4;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  margin-top: 14px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+#exportBtn:hover {
+  background-color: #324cdd;
+}
+
+/* Dropdown Style */
+#eventFilter {
+  background-color: #2A2E45;
+  color: #ffffff;
+  border: 1px solid #4a4f66;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: auto;
+}
+
+#eventFilter option {
+  background-color: #2A2E45;
+  color: #ffffff;
+}
