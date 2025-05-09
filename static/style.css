@@ -1,64 +1,75 @@
+/* General background and text color settings */
 body, .main-content, .card, .table, .navbar, .container-fluid, .card-body {
-  background-color: #2A2E45 !important;
-  color: #9b1b1b !important;
+  background-color: #2A2E45 !important;  /* Dark background */
+  color: #9b1b1b !important;  /* Text color (may override in specific elements) */
 }
 
+/* Default card appearance */
 .card {
   border: none;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Soft shadow */
 }
 
+/* Navigation and sidebar styling */
 .navbar, .sidenav {
-  background-color: #1f2233 !important;
+  background-color: #1f2233 !important;  /* Slightly darker background for nav */
 }
 
+/* Table header styling */
 .table thead th {
-  color: #ffffff !important;
-  background-color: #1f2233 !important;
-  border-color: #3c4059 !important;
+  color: #ffffff !important;  /* White text */
+  background-color: #1f2233 !important;  /* Header background */
+  border-color: #3c4059 !important;  /* Border color */
 }
+
+/* Table cell styling */
 .table td {
-    color: #ffffff !important;
-    border-color: #3c4059 !important;
-  }
-  
+  color: #ffffff !important;  /* White text */
+  border-color: #3c4059 !important;  /* Match header border */
+}
 
-
+/* Card box styling (repeated for refinement) */
 .card {
-    background-color: #2A2E45 !important;
-    border: none !important;
-    border-radius: 12px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
-    margin-bottom: 1.5rem !important;
-    padding: 1rem;
-  }
-  
-  
-  .card-header {
-    background-color: #2A2E45 !important;
-    color: #ffffff !important;
-    border-bottom: 1px solid #3c4059 !important;
-    border-radius: 0 !important;
-  }
-  
-  .card-body {
-    background-color: #2A2E45 !important;
-    border-radius: 0 !important;
-  }
-  
+  background-color: #2A2E45 !important;
+  border: none !important;
+  border-radius: 12px !important;  /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  margin-bottom: 1.5rem !important;
+  padding: 1rem;
+}
 
+/* Card header specific styling */
+.card-header {
+  background-color: #2A2E45 !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #3c4059 !important;
+  border-radius: 0 !important;
+}
+
+/* Card body background override */
+.card-body {
+  background-color: #2A2E45 !important;
+  border-radius: 0 !important;
+}
+
+/* Override Bootstrap's .text-dark class */
 .text-dark {
   color: #ffffff !important;
 }
 
+/* Ensure all heading and paragraph text appears in white */
 h5, h6, p {
   color: #ffffff !important;
 }
 
+/* Chart.js canvas background */
 canvas {
   background-color: #2A2E45 !important;
 }
-/* Button Style */
+
+/* ===================== Custom Elements ===================== */
+
+/* Export CSV button styling */
 #exportBtn {
   background-color: #5e72e4;
   color: white;
@@ -71,11 +82,12 @@ canvas {
   transition: 0.2s ease;
 }
 
+/* Button hover effect */
 #exportBtn:hover {
   background-color: #324cdd;
 }
 
-/* Dropdown Style */
+/* Dropdown filter styling */
 #eventFilter {
   background-color: #2A2E45;
   color: #ffffff;
@@ -87,6 +99,7 @@ canvas {
   width: auto;
 }
 
+/* Dropdown options styling */
 #eventFilter option {
   background-color: #2A2E45;
   color: #ffffff;
